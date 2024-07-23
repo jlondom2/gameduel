@@ -30,7 +30,7 @@ export default function NavBar() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <TopBar />
-      <div className="container">
+      <div className="navigation-wrap sticky-on-top absolute left-0 right-0 top-[42px] mx-auto max-w-screen-xl px-10">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
@@ -49,10 +49,10 @@ export default function NavBar() {
           </div>
           <div className="flex h-full flex-1 justify-center sm:justify-between">
             <div className="flex flex-shrink-0 items-center">
-              <img alt="Your Company" src={logo} className="h-16 w-auto" />
+              <img alt="Your Company" src={logo} className="h-14 w-auto" />
             </div>
             <div className="hidden sm:ml-6 sm:block">
-              <div className="main-menu flex h-full space-x-6">
+              <div className="main-menu flex h-full space-x-6 md:space-x-2 lg:space-x-10">
                 {navigation.map((item) => (
                   <a
                     key={item.name}

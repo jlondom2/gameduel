@@ -70,3 +70,160 @@ h6 {
   line-height: 1.7142857143em;
   text-shadow: 0px 0px 10px #020102;
 }
+
+.arrow-icon {
+  width: 12px;
+  height: 20px;
+  fill: #fff;
+}
+
+.button {
+  height: 38px;
+  border-radius: 200px;
+  padding: 0 68px 0 34px;
+  color: #fff;
+  font-family: "Exo", sans-serif;
+  font-size: 0.6875em;
+  font-weight: 800;
+  line-height: 46px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: relative;
+}
+
+.button .arrow-icon {
+  fill: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button .button-ornament {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 6px;
+}
+
+.button.big {
+  height: 48px;
+  padding: 0 92px 0 52px;
+  font-size: 0.875em;
+  line-height: 55px;
+}
+
+.arrow-icon {
+  width: 11px;
+  height: 11px;
+}
+
+.button .arrow-icon {
+  fill: #fff;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  transition: transform 0.24s ease-in-out;
+}
+
+.button:hover .arrow-icon {
+  -o-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+/* Tiny Button */
+
+.button.tiny {
+  height: 27px;
+  padding: 0 34px 0 15px;
+  font-size: 0.5625em;
+  line-height: 27px;
+}
+
+.button.tiny .button-ornament {
+  width: 21px;
+  height: 21px;
+}
+
+.button.tiny .button-ornament {
+  width: 21px;
+  height: 21px;
+  top: 3px;
+  right: 3px;
+}
+
+.button.tiny .arrow-icon {
+  top: 7px;
+  left: 9px;
+}
+
+/* BIG Button */
+
+.button.big {
+  height: 48px;
+  padding: 0 92px 0 52px;
+  font-size: 0.875em;
+  line-height: 48px;
+}
+
+.button.big .button-ornament {
+  width: 38px;
+  height: 38px;
+  top: 5px;
+}
+
+.arrow-icon.big {
+  width: 9px;
+  height: 15px;
+}
+
+.button.big .arrow-icon {
+  width: 22px;
+  height: 22px;
+  top: 11px;
+  left: 16px;
+}
+
+/* Small BUTTON */
+
+.button.small {
+  height: 34px;
+  padding: 0 24px;
+  font-size: 0.625em;
+  line-height: 34px;
+}
+
+.button.small .button-ornament {
+  display: none;
+}
+
+.navigation-wrap.sticky-on-top {
+  width: 100%;
+
+  z-index: 6666;
+  background-color: #fff;
+}
+
+.slick-dots {
+  bottom: 25px !important;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75 !important;
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 12px !important;
+}
+
+.post-preview-title,
+.post-preview-text {
+  text-shadow: 0px 0px 20px #020102;
+}

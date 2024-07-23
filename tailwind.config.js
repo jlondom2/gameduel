@@ -25,15 +25,24 @@ export default {
         "5xl": ["3.052rem", "4rem"],
       },
       colors: {
-        blue: "#1c95f3",
-        pink: "#f30a5c",
+        blue: {
+          100: "#1c95f3",
+          200: "#0270c5",
+        },
+        pink: {
+          100: "#f30a5c",
+          200: "#bd0244",
+        },
         orange: "#ff7849",
         green: "#13ce66",
         yellow: "#ffc82c",
         "gray-dark": "#273444",
         gray: "#363636",
-        "gray-light": "#d3dce6",
-        purple: "#7442ce",
+        "gray-light": "#dbdbdb",
+        purple: {
+          100: "#7442ce",
+          200: "#4d2498",
+        },
       },
     },
   },
