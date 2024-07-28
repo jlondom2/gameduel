@@ -30,7 +30,7 @@ export default function NavBar() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <TopBar />
-      <div className="navigation-wrap sticky-on-top absolute left-0 right-0 top-[42px] mx-auto max-w-screen-xl px-10">
+      <div className="navigation-wrap sticky-on-top absolute left-0 right-0 top-[42px] z-10 mx-auto max-w-screen-xl px-10">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
@@ -74,7 +74,7 @@ export default function NavBar() {
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
-              className="bg-gray-800 text-gray-400 focus:ring-offset-gray-800 relative rounded-full p-1 hover:text-blue focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+              className="bg-gray-800 text-gray-400 focus:ring-offset-gray-800 hover:text-blue relative rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View notifications</span>
