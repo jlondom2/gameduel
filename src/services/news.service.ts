@@ -4,14 +4,18 @@ import { Article } from "../interfaces/article";
 interface Props {
   query: string;
   pageSize: number;
+  sortBy?: "publishedAt" | "relevance";
 }
 
-export const getNews = async ({ query, pageSize }: Props): Promise<Article> => {
+export const getNews = async ({
+  query,
+  pageSize,
+  sortBy,
+}: Props): Promise<Article> => {
   const apiKey = "5a853043ea23c1584d0e19a8c1e3a529";
 
   const params = new URLSearchParams();
-  params.append("q", "videogames");
-  params.append("sortby", "publishedAt");
+  params.append("sortby", sortBy || "publishedAt");
   params.append("max", pageSize.toString());
   params.append("apikey", apiKey);
   params.append("q", query);
@@ -19,6 +23,7 @@ export const getNews = async ({ query, pageSize }: Props): Promise<Article> => {
 
   try {
     const { data } = await articlesApi.get<Article>(`/search?`, { params });
+
     return data;
   } catch (error) {
     console.log(error);

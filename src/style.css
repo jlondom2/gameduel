@@ -592,3 +592,139 @@ h6 {
   z-index: 0;
   height: 100%;
 }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  color: #363636;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8125em;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 200px;
+}
+
+.submit-input input[type="text"],
+.submit-input input[type="email"] {
+  height: 40px;
+  font-size: 0.75em;
+}
+
+.submit-input .submit-input-button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #363636;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.submit-input.full .submit-input-button {
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+}
+
+.submit-input.blue .submit-input-button {
+  background-color: #1c95f3;
+}
+
+.submit-input {
+  position: relative;
+}
+
+.search-icon.small {
+  width: 16px;
+  height: 16px;
+  width: 24px;
+  height: 22px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.banner-wrap.forum-banner {
+  background: linear-gradient(45deg, #f30a5c, #1c95f3);
+  background-size: cover;
+}
+
+.banner {
+  min-height: 260px;
+  padding: 180px 0 90px;
+}
+
+.banner .banner-title {
+  color: #fff;
+  text-align: center;
+}
+
+.banner .banner-title {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.error-display {
+  padding-top: 430px;
+  text-align: center;
+  position: relative;
+}
+
+.error-display .error-img {
+  width: 391px;
+  height: 374px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -132px;
+}
+
+.error-display .error-title {
+  margin-top: 50px;
+  color: #363636;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.error-display .error-title,
+.streamer-overview .streamer-info .streamer-info-name,
+.contact-section .contact-section-title,
+.sponsors-title,
+.order-result-banner .order-result-banner-title {
+  font-size: 3.25em;
+}
+
+.error-display .error-subtitle {
+  margin-top: 26px;
+  color: #8b8b8b;
+  line-height: 1em;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.error-display .error-text,
+.post-open .post-open-text,
+.post-comment .post-comment-text {
+  font-size: 0.875em;
+  line-height: 1.8571428571em;
+}
+
+.error-display .error-text {
+  width: 570px;
+  margin: 46px auto 0;
+}

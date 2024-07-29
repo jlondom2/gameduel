@@ -1,8 +1,11 @@
+import { ArticleElement } from "../../interfaces/article";
+
 interface Props {
   size?: string;
+  article: ArticleElement;
 }
 
-export const PostPreview = ({ size }: Props) => {
+export const PostPreview = ({ size, article }: Props) => {
   return (
     <div
       className={`post-preview picture ${size === "full" ? "big" : ""} game-review`}
@@ -12,8 +15,7 @@ export const PostPreview = ({ size }: Props) => {
           <figure
             className="post-preview-img"
             style={{
-              backgroundImage:
-                'url("https://cdn2.unrealengine.com/a-beginner-s-guide-to-league-of-legends-teemo-1215x717-dc27844d5953.jpg")',
+              backgroundImage: `url(${article.image})`,
             }}
           >
             <img

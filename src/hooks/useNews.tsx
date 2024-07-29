@@ -13,26 +13,13 @@ interface Props {
 // export the useNews hook.
 
 export const useNews = ({ query, pageSize }: Props) => {
-  const setArticles = useNewsStore((state) => state.setArticles);
   const news = useNewsStore((state) => state.news);
-
   const queryArticles = useQuery({
     queryKey: ["articles"],
     queryFn: () => getNews({ query, pageSize }),
-    staleTime: Infinity /* 1000 * 60 * 60 * 4,  */, // 4 hours
+    staleTime: 1000 * 60 * 60 * 4, // 4 hours
     enabled: news.length === 0,
   });
 
-  if (queryArticles.isFetched) {
-    console.log("🚀 ~ useNews ~ queryArticles.data", queryArticles.data);
-    setArticles(queryArticles.data?.articles || []);
-    return {
-      isLoading: queryArticles.isLoading,
-      news,
-    };
-  }
-
-  /* setArticles(queryArticles.data?.articles || []); */
-
-  return { isLoading: false, news: news };
+  return { queryArticles };
 };
