@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArticleElement } from "../../interfaces/article";
+import { Button } from "../ui/Button";
 
 interface Props {
   article: ArticleElement; // replace with Article type when available
@@ -40,14 +41,15 @@ export const PostPreviewLandscape = ({ article }: Props) => {
           </p>
         </div>
 
-        <p className="post-preview-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut ore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident.
-        </p>
+        <p className="post-preview-text">{article.description}</p>
+        <div className="my-5">
+          <Link
+            to="/"
+            className="rounded-full bg-gray-dark p-1 px-3 text-sm text-white"
+          >
+            Read Full Article
+          </Link>
+        </div>
       </div>
     </>
   );
