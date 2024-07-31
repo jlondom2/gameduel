@@ -15,8 +15,6 @@ interface Props {
 
 // and display the fetched articles.
 
-// Add error handling for the fetch request and display an error message if there is an issuee
-
 export const useArticles = ({ query, pageSize, sortBy }: Props) => {
   const queryArticles = useQuery({
     queryKey: ["VideoGames"],

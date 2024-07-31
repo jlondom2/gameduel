@@ -618,7 +618,7 @@ select {
 
 .submit-input input[type="text"],
 .submit-input input[type="email"] {
-  height: 40px;
+  height: 50px;
   font-size: 0.75em;
 }
 
@@ -638,8 +638,8 @@ select {
 .submit-input.full .submit-input-button {
   width: 40px;
   height: 40px;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 10px;
 }
 
 .submit-input.blue .submit-input-button {
@@ -727,4 +727,478 @@ select {
 .error-display .error-text {
   width: 570px;
   margin: 46px auto 0;
+}
+
+.section-title-wrap .section-title.medium {
+  font-size: 1.125em;
+}
+
+.form-box-heading .form-box-heading-title,
+.banner-title,
+.post-preview.huge .post-preview-title,
+.post-open .post-open-title.big,
+.error-display .error-title,
+.streamer-overview .streamer-info .streamer-info-name,
+.contact-section .contact-section-title,
+.sponsors-title,
+.order-result-banner .order-result-banner-title,
+.post-open .post-open-title,
+.banner .banner-title,
+.post-preview.picture.big .post-preview-overlay .post-preview-title,
+.post-preview.large .post-preview-title,
+.post-open .post-open-title.small,
+.reviews-wrap .reviews-header .reviews-header-title,
+.post-preview.big .post-preview-title,
+.topic-comment .topic-comment-content .topic-comment-quote:before,
+.widget-team-vs .widget-team-vs-item .team-score,
+.match-stats .match-score,
+.widget-stat-info-wrap .widget-stat-info-number,
+.countdown-text,
+.topic-wrap .topic-header .topic-title,
+.reviews-wrap .reviews-body .reviews-body-title,
+.post-preview.landscape.big .post-preview-title,
+.post-preview.medium .post-preview-title,
+.promo-banner .promo-banner-info .promo-banner-title,
+.section-slider-bg .section-slider-title,
+.stats-info-item .stats-info-item-value,
+.form-box-heading .form-box-heading-subtitle,
+.product-open .product-name,
+.post-preview-title,
+.error-display .error-subtitle,
+.post-preview.video.no-hover .post-preview-title,
+.post-comment .post-comment-username,
+.video-info-slider-items .video-info-slider-item .video-info-slider-title,
+.topic-comment
+  .topic-comment-content
+  .topic-comment-content-header
+  .topic-comment-username,
+.profile-user .profile-user-name,
+.user-review .user-review-title,
+.order-result-banner .order-result-banner-text,
+.post-open .quote-text,
+.subscribe-section .subscribe-section-title,
+.sponsor-info .sponsor-info-title,
+.faq-item .faq-item-trigger .faq-item-title,
+.widget-medals .widget-medals-info .widget-medals-title,
+.badge-item .badge-item-title,
+.post-open .post-open-text.bold,
+.skill-loot-list .skill-loot-item-info .skill-loot-item-title,
+.badge-info,
+.page-navigation .page-navigation-item,
+.timestamp-tag,
+.filter-heading .filter-heading-text,
+.account-info-wrap .account-info-name,
+.ban-list-wrap .ban-list-title,
+.character-selection-list .character-selection-list-text,
+.ticket-wrap .ticket-info .ticket-title,
+.ticket-wrap .ticket-teams .ticket-teams-text,
+.ticket-wrap .ticket-buy-button,
+.order-item .order-header .order-header-item,
+.sponsor-item .sponsor-item-link,
+.faq-item .faq-item-footer .faq-item-footer-text,
+.bubble-ornament .bubble-ornament-info,
+.bubble-ornament .bubble-ornament-text,
+.tag-quantity .tag-quantity-text,
+.button-replay,
+.decorated-link,
+.link-text-form,
+.inventory-bag-preview .items-in-inventory,
+.inventory-bag-preview .inventory-subtotal,
+.dropdown-simple-wrap .dp-option-text,
+.widget-title-wrap .widget-title,
+.widget-title-wrap .widget-text.bold,
+.widget-title-wrap .stats-reference .stat-reference .stat-reference-text,
+.widget-overflow-wrap .widget-overflow-list .widget-overflow-list-text,
+.widget-match-box-item .widget-match-box-link,
+.widget-info-box .widget-info-box-item .widget-info-title,
+.widget-simple-stats.small
+  .widget-simple-stat
+  .widget-simple-stat-rows
+  .widget-simple-stat-row
+  .widget-simple-stat-title,
+.widget-simple-stats.small
+  .widget-simple-stat
+  .widget-simple-stat-rows
+  .widget-simple-stat-row
+  .widget-simple-stat-value,
+.widget-simple-stat .widget-simple-stat-header .widget-simple-stat-header-title,
+.events-preview .event-preview-header .event-preview-header-text,
+.team-score-boxes-title-wrap .team-score-box-title,
+.team-score-boxes .team-score-box .team-score-box-text,
+.table.order-overview .table-row-item .product-category,
+.table-row-header-item .table-row-header-title,
+.table-row-item .table-text.bold,
+.table-row-item .table-text-link,
+.match-stats .match-link,
+.product-open .product-category-wrap .product-stock,
+.product-open .product-info-list .product-info-list-item,
+.product-feature .product-feature-info .product-feature-title,
+.arc-rate-wrap .arc-rate-stat,
+.countdown-text-wrap .countdown-text-heading,
+.bar-progress-info,
+.bar-progress-text,
+.xm-tooltip .xm-tooltip-text,
+.calendar .calendar-header .calendar-header-bottom .calendar-week-day,
+.promo-banner .promo-banner-info .promo-banner-text,
+.option-list .option-list-item,
+.user-dropdown .user-dropdown-header .user-dropdown-header-text,
+.topic-comment .topic-comment-user .topic-comment-user-text,
+.profile-user .profile-user-info,
+.notification-item .notification-item-text,
+.user-review .user-review-info,
+.inventory-open-header .inventory-open-header-title,
+.information-header .information-header-title,
+.inventory-compare .inventory-compare-title,
+.contact-info-preview
+  .contact-info-preview-email-wrap
+  .contact-info-preview-email,
+.shortcode-section .shortcode-section-title,
+.shortcode-color .shortcode-color-code,
+.team-info-wrap .team-info .team-name,
+.information-rows
+  .information-row
+  .information-row-item
+  .information-row-item-text,
+.button-social,
+.dropdown-inner-list .dropdown-inner-list-item .dropdown-inner-list-item-title,
+.dropdown-inner-list .dropdown-inner-list-item .dropdown-inner-list-item-value,
+.mobile-dropdown-item > .mobile-dropdown-item-link,
+.widget-match-result .widget-match-result-actions .widget-match-result-action,
+.widget-match-result .widget-match-result-item .match-score,
+.widget-match-result .widget-match-result-item .match-datetime,
+.mvp-stats .mvp-stat .mvp-stat-title,
+.widget-simple-stat
+  .widget-simple-stat-rows
+  .widget-simple-stat-row
+  .widget-simple-stat-title,
+.widget-simple-stat
+  .widget-simple-stat-rows
+  .widget-simple-stat-row
+  .widget-simple-stat-value,
+.widget-stat-info-wrap .widget-stat-info .widget-stat-info-title,
+.events-preview .event-preview-item .event-preview-item-timestamp,
+.events-preview
+  .event-preview-item
+  .event-preview-item-content
+  .event-preview-item-title,
+.table-row-item .table-text.bolder,
+.featured-info .featured-info-text,
+.arc-stats-wrap .arc-stats-info .arc-stats-stat,
+.promo-banner .promo-banner-info .promo-banner-pre-title,
+.forum-category-wrap .forum-category-subcategories .forum-category-subcategory,
+.forum-post-link,
+.forum-category-text,
+.inventory-open-action .inventory-open-row-text,
+.inventory-open-total .inventory-open-row-text,
+.information-box .information-box-message,
+.information-box .information-box-action,
+.featured-stat-wrap .featured-stat-title,
+.order-item .order-body .order-body-item .order-body-item-title,
+.bio-item .bio-item-title,
+.stats-info-item
+  .stats-info-item-description
+  .stats-info-item-description-title,
+.contact-item .contact-item-text,
+.form-box-wrap .tab-form-buttons .tab-form-button,
+.widget-top-player .top-player-info-wrap .top-player-info .top-player-name,
+.tweets-preview-widget-item .tweets-prevew-widget-item-user,
+.comment-preview .comment-preview-title,
+.poll-widget .poll-widget-title,
+.stream-preview .stream-preview-streamer .stream-preview-streamer-name,
+.team-score-boxes .team-score-box .team-points,
+.medal-list .medal-list-item .medal-list-item-title,
+.overview-info-wrap .overview-info-item .overview-info-item-text,
+.table.order-overview .table-row-item .product-name,
+.post-preview.video.tiny .post-preview-title,
+.post-preview.video.large
+  .post-preview-overlay
+  .post-preview-overlay-info
+  .post-preview-text,
+.post-preview.tiny .post-preview-title,
+.product-open .product-category-wrap .product-category,
+.product-feature .product-feature-info .product-feature-text,
+.progress-bar .progress-bar-text,
+.tab-wrap .tab-header .tab-header-item .tab-header-item-text,
+.calendar .calendar-header .calendar-header-top .calendar-month-year,
+.topic-wrap .topic-footer .topic-footer-info .topic-footer-text,
+.topic-comment
+  .topic-comment-content
+  .topic-comment-quote
+  .topic-comment-quote-user
+  .topic-comment-quote-user-name,
+.topic-comment-reply-user .topic-comment-reply-name,
+.topic-link-item .topic-link-item-title,
+.user-link-item .user-link-item-title,
+.activity-item .activity-item-row .activity-item-title,
+.notification-item.medium .notification-item-text,
+.reviews-wrap
+  .reviews-header
+  .reviews-header-rating
+  .reviews-header-rating-text,
+.rating-block .rating-block-title,
+.contact-info-preview
+  .contact-info-preview-sign
+  .contact-info-preview-sign-text,
+.shortcode-font .shortcode-font-family,
+.shortcode-font .shortcode-font-weight,
+.mobile-menu-item > .mobile-menu-item-link,
+.product-preview-title,
+.account-info-wrap .account-info-username,
+.account-info-wrap
+  .account-info-stats
+  .account-info-stat
+  .account-info-stat-value,
+.player-preview .player-preview-info .player-preview-nickname,
+.widget-top-player .top-player-stats .top-player-stat .top-player-stat-title,
+.live-news-widget .live-news-widget-title-wrap .live-news-widget-title,
+.widget-slider-items .widget-slider-item .widget-slider-item-title,
+.widget-calendar-row
+  .calendar-row-wrap
+  .calendar-row-items
+  .calendar-row-item
+  .calendar-row-item-day,
+.post-preview.video .post-preview-title,
+.post-preview.small .post-preview-title,
+.forum-category-wrap .forum-category-title,
+.topic-wrap
+  .topic-scroll-wrap
+  .topic-scroll
+  .topic-scroll-info
+  .topic-scroll-counter,
+.post-preview.picture.short .post-preview-overlay .post-preview-title,
+.user-avatar-wrap .user-avatar-text,
+.user-avatar-wrap .user-avatar-decoration .user-avatar-decoration-text,
+.widget-top-player .top-player-info-wrap .top-player-info .top-player-flag,
+.stream-start-counter,
+.account-info-wrap
+  .account-info-stats
+  .account-info-stat
+  .account-info-stat-title,
+.ticket-wrap .ticket-info .ticket-text,
+.table-row-item .table-text,
+.match-stats .match-time,
+.calendar .calendar-body .calendar-day .event-list .event-item,
+.text-heading,
+.post-open .post-open-subtitle,
+.post-open .feature-list .feature-list-item .feature-title,
+.post-open .review-wrap .review-score-wrap .review-score-number,
+.post-open .review-wrap .review-score-wrap .review-score-text,
+.section-title-wrap .section-title,
+.shortcode-font .shortcode-font-demo {
+  display: block;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.filter-heading .filter-heading-text {
+  color: #363636;
+}
+
+.skill-loot-list .skill-loot-item-info .skill-loot-item-title,
+.badge-info,
+.page-navigation .page-navigation-item,
+.timestamp-tag,
+.filter-heading .filter-heading-text,
+.account-info-wrap .account-info-name,
+.ban-list-wrap .ban-list-title,
+.character-selection-list .character-selection-list-text,
+.ticket-wrap .ticket-info .ticket-title,
+.ticket-wrap .ticket-teams .ticket-teams-text,
+.ticket-wrap .ticket-buy-button,
+.order-item .order-header .order-header-item,
+.sponsor-item .sponsor-item-link,
+.faq-item .faq-item-footer .faq-item-footer-text,
+.bubble-ornament .bubble-ornament-info,
+.bubble-ornament .bubble-ornament-text,
+.tag-quantity .tag-quantity-text,
+.button-replay,
+.decorated-link,
+.link-text-form,
+.inventory-bag-preview .items-in-inventory,
+.inventory-bag-preview .inventory-subtotal,
+.dropdown-simple-wrap .dp-option-text,
+.widget-title-wrap .widget-title,
+.widget-title-wrap .widget-text.bold,
+.widget-title-wrap .stats-reference .stat-reference .stat-reference-text,
+.widget-overflow-wrap .widget-overflow-list .widget-overflow-list-text,
+.widget-match-box-item .widget-match-box-link,
+.widget-info-box .widget-info-box-item .widget-info-title,
+.widget-simple-stats.small
+  .widget-simple-stat
+  .widget-simple-stat-rows
+  .widget-simple-stat-row
+  .widget-simple-stat-title,
+.widget-simple-stats.small
+  .widget-simple-stat
+  .widget-simple-stat-rows
+  .widget-simple-stat-row
+  .widget-simple-stat-value,
+.widget-simple-stat .widget-simple-stat-header .widget-simple-stat-header-title,
+.events-preview .event-preview-header .event-preview-header-text,
+.team-score-boxes-title-wrap .team-score-box-title,
+.team-score-boxes .team-score-box .team-score-box-text,
+.table.order-overview .table-row-item .product-category,
+.table-row-header-item .table-row-header-title,
+.table-row-item .table-text.bold,
+.table-row-item .table-text-link,
+.match-stats .match-link,
+.product-open .product-category-wrap .product-stock,
+.product-open .product-info-list .product-info-list-item,
+.product-feature .product-feature-info .product-feature-title,
+.arc-rate-wrap .arc-rate-stat,
+.countdown-text-wrap .countdown-text-heading,
+.bar-progress-info,
+.bar-progress-text,
+.xm-tooltip .xm-tooltip-text,
+.calendar .calendar-header .calendar-header-bottom .calendar-week-day,
+.promo-banner .promo-banner-info .promo-banner-text,
+.option-list .option-list-item,
+.user-dropdown .user-dropdown-header .user-dropdown-header-text,
+.topic-comment .topic-comment-user .topic-comment-user-text,
+.profile-user .profile-user-info,
+.notification-item .notification-item-text,
+.user-review .user-review-info,
+.inventory-open-header .inventory-open-header-title,
+.information-header .information-header-title,
+.inventory-compare .inventory-compare-title,
+.contact-info-preview
+  .contact-info-preview-email-wrap
+  .contact-info-preview-email,
+.shortcode-section .shortcode-section-title,
+.shortcode-color .shortcode-color-code {
+  font-size: 0.625em;
+}
+
+.section-title-wrap + .post-preview-showcase,
+.section-title-wrap + .carousel,
+.section-title-wrap + .filter-heading {
+  margin-top: 26px;
+}
+
+.filter-heading {
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 14px;
+}
+
+.post-preview.landscape {
+  height: 160px;
+  padding: 5px 0 0 286px;
+}
+
+.post-preview {
+  position: relative;
+}
+
+.post-preview.landscape {
+  height: 160px;
+  padding: 5px 0 0 286px;
+}
+
+.post-preview.landscape .post-preview-img-wrap {
+  margin-bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.post-preview.landscape .post-preview-img {
+  width: 270px;
+  height: 160px;
+}
+
+figure > img {
+  width: 100%;
+}
+
+.post-preview .post-preview-img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.post-preview.landscape .post-preview-title,
+.post-preview.landscape .post-preview-text {
+  text-shadow: none;
+}
+
+.post-author-info {
+  line-height: 26px;
+}
+
+p.light {
+  color: #8b8b8b;
+}
+
+.post-author-info .post-author,
+.post-author-info .post-comment-count {
+  font-weight: 700;
+}
+
+.post-author-info .separator {
+  margin: 0 5px;
+}
+
+p {
+  color: #777;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9125em;
+  line-height: 1.6923076923em;
+}
+
+.post-preview.landscape .post-preview-text {
+  margin-top: 10px;
+}
+
+.post-preview.gaming-news .post-author,
+.post-preview.gaming-news .post-comment-count {
+  color: #1c95f3;
+}
+
+p.small {
+  font-size: 0.6875em;
+}
+
+.post-preview.landscape .tag-ornament {
+  top: 140px;
+}
+
+.post-preview .tag-ornament {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  z-index: 9999;
+}
+
+.section-title-wrap .section-title-separator {
+  width: 100%;
+  height: 1px;
+  margin-top: 16px;
+  background-color: #dbdbdb;
+  position: relative;
+}
+
+.section-title-wrap .section-title-separator:before {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background-color: #363636;
+  position: absolute;
+  top: -2px;
+  left: 0;
+}
+
+.section-title-wrap.blue .section-title-separator:before {
+  background-color: #1c95f3;
+}
+
+.filter-heading .filter-heading-text .highlight {
+  color: #1c95f3;
+}
+
+.filter-heading .filter-heading-text {
+  color: #363636;
+}
+
+.filter-heading + .post-preview-showcase {
+  margin-top: 26px;
 }

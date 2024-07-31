@@ -29,7 +29,7 @@ export const HomePage = () => {
 
       <LiveNews />
       <div className="container py-6">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-10">
           <div className="layout-content col-span-1 md:col-span-8">
             <PostPreviewSet />
           </div>

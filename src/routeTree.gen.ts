@@ -13,7 +13,7 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as SearchQueryImport } from './routes/search.$query'
+import { Route as SearchImport } from './routes/search'
 
 // Create Virtual Routes
 
@@ -27,15 +27,15 @@ const AboutLazyRoute = AboutLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
 
+const SearchRoute = SearchImport.update({
+  path: '/search',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
-
-const SearchQueryRoute = SearchQueryImport.update({
-  path: '/search/$query',
-  getParentRoute: () => rootRoute,
-} as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -48,18 +48,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchImport
+      parentRoute: typeof rootRoute
+    }
     '/about': {
       id: '/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutLazyImport
-      parentRoute: typeof rootRoute
-    }
-    '/search/$query': {
-      id: '/search/$query'
-      path: '/search/$query'
-      fullPath: '/search/$query'
-      preLoaderRoute: typeof SearchQueryImport
       parentRoute: typeof rootRoute
     }
   }
@@ -69,8 +69,8 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   IndexLazyRoute,
+  SearchRoute,
   AboutLazyRoute,
-  SearchQueryRoute,
 })
 
 /* prettier-ignore-end */
@@ -82,18 +82,18 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about",
-        "/search/$query"
+        "/search",
+        "/about"
       ]
     },
     "/": {
       "filePath": "index.lazy.tsx"
     },
+    "/search": {
+      "filePath": "search.tsx"
+    },
     "/about": {
       "filePath": "about.lazy.tsx"
-    },
-    "/search/$query": {
-      "filePath": "search.$query.tsx"
     }
   }
 }

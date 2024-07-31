@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ArticleElement } from "../../interfaces/article";
 
 interface Props {
@@ -10,7 +11,7 @@ export const PostPreview = ({ size, article }: Props) => {
     <div
       className={`post-preview picture ${size === "full" ? "big" : ""} game-review`}
     >
-      <a href="#">
+      <Link to="/">
         <div className="post-preview-img-wrap">
           <figure
             className="post-preview-img"
@@ -26,7 +27,12 @@ export const PostPreview = ({ size, article }: Props) => {
           </figure>
 
           <div className="post-preview-overlay">
-            <span className="tag-ornament">Game Reviews</span>
+            {size === "full" ? (
+              <span className="tag-ornament">Game Reviews</span>
+            ) : (
+              ""
+            )}
+
             <p className="post-preview-title font-exo font-bold uppercase">
               We reviewed the new Magimons game
             </p>
@@ -41,7 +47,7 @@ export const PostPreview = ({ size, article }: Props) => {
             )}
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

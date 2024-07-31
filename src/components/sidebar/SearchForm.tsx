@@ -3,6 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import { CiSearch } from "react-icons/ci";
+import { useNavigate } from "@tanstack/react-router";
 
 type Inputs = {
   search: string;
@@ -23,8 +24,10 @@ export const SearchForm = () => {
     resolver: yupResolver(schema),
   });
 
+  const navigate = useNavigate();
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+    navigate({ to: `/search`, search: { q: data.search } });
   };
 
   return (

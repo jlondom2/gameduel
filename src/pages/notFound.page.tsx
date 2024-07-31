@@ -1,6 +1,7 @@
 import { LiveNews } from "../components";
 import { PageBanner } from "../components/ui/PageBanner";
 import errorImage from "../assets/error-img.png";
+import { Button } from "../components/ui/Button";
 
 export const NotFound = () => {
   return (
@@ -33,12 +34,14 @@ export const NotFound = () => {
           <p className="error-text">
             The page you are looking for has been moved or doesn’t exist
             anymore, if you like you can return to the previous page, or go to
-            our main homepage. If the problem persists, please send us an email
-            to{" "}
-            <a className="highlight" href="mailto:info@pixeldiamonds.com">
-              info@pixeldiamonds.com
-            </a>
+            our main homepage.
           </p>
+
+          <div className="flex justify-center p-8 text-center">
+            <Button color="text-white" bg="bg-purple-100" size="big" to="/">
+              {"Go to Homepage"}
+            </Button>
+          </div>
         </div>
       </div>
     </>

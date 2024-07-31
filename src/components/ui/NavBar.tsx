@@ -12,6 +12,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../../assets/logo.png";
 import { GoSearch } from "react-icons/go";
 import { TopBar } from "./TopBar";
+import { Link } from "@tanstack/react-router";
 
 const navigation = [
   { name: "Home", href: "#", current: true },
@@ -49,7 +50,9 @@ export default function NavBar() {
           </div>
           <div className="flex h-full flex-1 justify-center sm:justify-between">
             <div className="flex flex-shrink-0 items-center">
-              <img alt="Your Company" src={logo} className="h-14 w-auto" />
+              <Link to={"/"}>
+                <img alt="Your Company" src={logo} className="h-14 w-auto" />
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="main-menu flex h-full space-x-6 md:space-x-2 lg:space-x-10">
