@@ -13,6 +13,7 @@ import logo from "../../assets/logo.png";
 import { GoSearch } from "react-icons/go";
 import { TopBar } from "./TopBar";
 import { Link } from "@tanstack/react-router";
+import useUIStore from "../../stores/ui.store";
 
 const navigation = [
   { name: "Home", href: "#", current: true },
@@ -28,6 +29,11 @@ function classNames(...classes: string[]) {
 }
 
 export default function NavBar() {
+  const handleSearchPopup = useUIStore((state) => state.handleSearchPopup);
+
+  const openSearchPopup = () => {
+    handleSearchPopup();
+  };
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <TopBar />
@@ -77,6 +83,7 @@ export default function NavBar() {
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
+              onClick={openSearchPopup}
               className="bg-gray-800 text-gray-400 focus:ring-offset-gray-800 hover:text-blue relative rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             >
               <span className="absolute -inset-1.5" />
@@ -85,7 +92,7 @@ export default function NavBar() {
             </button>
 
             {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
+            {/* <Menu as="div" className="relative ml-3">
               <div>
                 <MenuButton className="bg-gray-800 focus:ring-offset-gray-800 relative flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
                   <span className="absolute -inset-1.5" />
@@ -126,7 +133,7 @@ export default function NavBar() {
                   </a>
                 </MenuItem>
               </MenuItems>
-            </Menu>
+            </Menu> */}
           </div>
         </div>
       </div>
