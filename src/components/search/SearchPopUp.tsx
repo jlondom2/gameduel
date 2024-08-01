@@ -1,13 +1,40 @@
+import { SubmitHandler, useForm } from "react-hook-form";
 import useUIStore from "../../stores/ui.store";
+import { useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
 
 export const SearchPopUp = () => {
   const searchPopup = useUIStore((state) => state.searchPopup);
 
-  const handleSearchPopup = useUIStore((state) => state.handleSearchPopup);
-
   const closePopup = () => {
     handleSearchPopup();
   };
+
+  type Inputs = {
+    search: string;
+  };
+
+  const [datainput, setDatainput] = useState<string>("lo");
+
+  const navigate = useNavigate();
+
+  const handleSearchPopup = useUIStore((state) => state.handleSearchPopup);
+
+  const {
+    register,
+    handleSubmit,
+
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      navigate({ to: `/search`, search: { q: datainput } });
+      handleSearchPopup();
+    }
+  };
+
   return (
     <>
       {/* SEARCH POPUP */}
@@ -23,14 +50,17 @@ export const SearchPopUp = () => {
         </button>
 
         {/* /CROSS ICON */}
-        <form method="GET" className="search-popup-form">
+        <form className="search-popup-form">
           <input
             type="text"
-            id="search"
+            {...register("search", { required: true })}
             className="input-line animate"
-            name="search"
             placeholder="What are you looking for...?"
+            onChange={(event) => setDatainput(event.target.value)}
+            onKeyDown={(event) => handleKeyDown(event.nativeEvent)}
           />
+
+          {errors.search && <span>This field is required</span>}
         </form>
         <p className="search-popup-text animate">
           Write what you are looking for and press enter to begin your search!
