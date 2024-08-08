@@ -18,7 +18,6 @@ export const SearchPage = () => {
   const { querySearch } = useSearchHook({ query: query, pageSize: pageSize });
 
   const { data, isLoading, isError } = querySearch;
-  console.log("🚀 ~ SearchPage ~ data:", data);
 
   if (!routeSearch.q) {
     return <NoSearch />;
@@ -28,7 +27,7 @@ export const SearchPage = () => {
   }
 
   if (isError) {
-    return <div>Error fetching data</div>;
+    return <FullScreenLoader />;
   }
   return (
     <>

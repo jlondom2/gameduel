@@ -1,10 +1,19 @@
 import star from "../assets/live-news-icon.png";
+import { useArticles } from "../hooks/useArticles";
 
 export const LiveNews = () => {
+  const { queryArticles } = useArticles({
+    query: "videogames",
+    pageSize: 7,
+    sortBy: "publishedAt",
+  });
+
+  const { data } = queryArticles;
+
   return (
     <div>
       <div className="live-news-widget-wrap">
-        <div className="live-news-widget grid-limit">
+        <div className="live-news-widget grid-limit mx-auto max-w-screen-xl">
           <div className="live-news-widget-stairs left red">
             <div className="live-news-widget-stair"></div>
             <div className="live-news-widget-stair"></div>
@@ -38,23 +47,21 @@ export const LiveNews = () => {
 
           <div id="lineslide-wrap1" className="live-news-widget-text-wrap">
             <p className="live-news-widget-text">
-              <a href="#" className="text-white">
-                {" "}
-                Lorem ipsum dolor sit amet consectetur
-              </a>{" "}
-              adipisicing elit. Provident quasi praesentium natus dolore dolorum
-              <span className="separator">
-                <span className="separator-bar">/</span>
-                <span className="separator-bar">/</span>
-              </span>
-              beatae aspernatur facere minus quos ut accusantium, cupiditate
-              sunt esse accusamus odit delectus quia voluptatem consequatur.
-              <span className="separator">
-                <span className="separator-bar">/</span>
-                <span className="separator-bar">/</span>
-              </span>
-              beatae aspernatur facere minus quos ut accusantium, cupiditate
-              sunt esse accusamus odit delectus quia voluptatem consequatur.
+              {data?.articles.map((article) => (
+                <a
+                  href={article.url}
+                  target="_blank"
+                  style={{ display: "inline-block" }}
+                  key={article.title}
+                >
+                  <span key={article.title}>{article.title}</span>
+
+                  <span className="separator">
+                    <span className="separator-bar">/</span>
+                    <span className="separator-bar">/</span>
+                  </span>
+                </a>
+              ))}
             </p>
           </div>
         </div>

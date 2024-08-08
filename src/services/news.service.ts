@@ -20,6 +20,7 @@ export const getNews = async ({
   params.append("apikey", apiKey);
   params.append("q", query);
   params.append("lang", "en");
+  params.append("content", "expand");
 
   try {
     const { data } = await articlesApi.get<Article>(`/search?`, { params });

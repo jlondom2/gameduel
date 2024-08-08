@@ -4,7 +4,6 @@ import * as yup from "yup";
 
 import { CiSearch } from "react-icons/ci";
 import { useNavigate } from "@tanstack/react-router";
-import useUIStore from "../../stores/ui.store";
 
 type Inputs = {
   search: string;

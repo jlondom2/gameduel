@@ -5,6 +5,7 @@ import useNewsStore from "../stores/news.store";
 interface Props {
   query: string;
   pageSize: number;
+  sortBy?: "publishedAt" | "relevance";
 }
 
 // create an interface Props that will have two properties query and pageSize both of type string.
@@ -12,11 +13,11 @@ interface Props {
 // queryArticles will be set to the result of useQuery hook that will take an object with the queryKey of ["articles"] and queryFn that will call the getNews function with the query and pageSize.
 // export the useNews hook.
 
-export const useNews = ({ query, pageSize }: Props) => {
+export const useNews = ({ query, pageSize, sortBy }: Props) => {
   const news = useNewsStore((state) => state.news);
   const queryArticles = useQuery({
-    queryKey: ["articles"],
-    queryFn: () => getNews({ query, pageSize }),
+    queryKey: ["articles", { query, pageSize }],
+    queryFn: () => getNews({ query, pageSize, sortBy }),
     staleTime: 1000 * 60 * 60 * 4, // 4 hours
     enabled: news.length === 0,
   });

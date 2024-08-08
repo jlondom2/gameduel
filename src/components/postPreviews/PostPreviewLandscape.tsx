@@ -1,15 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import { ArticleElement } from "../../interfaces/article";
-import { Button } from "../ui/Button";
 
 interface Props {
   article: ArticleElement; // replace with Article type when available
+  size?: "small" | "big";
+  index?: number;
 }
-export const PostPreviewLandscape = ({ article }: Props) => {
-  console.log("🚀 ~ PostPreviewLandscape ~ article:", article);
+export const PostPreviewLandscape = ({ article, size, index = 1 }: Props) => {
   return (
     <>
-      <div className="post-preview landscape gaming-news mb-5">
+      <div
+        className={`post-preview landscape ${size || ""} ${index % 2 === 0 ? "orpurple" : "orblu"} mb-5`}
+      >
         <a href="post-v1.html">
           <div className="post-preview-img-wrap">
             <figure

@@ -8,12 +8,16 @@ import useNewsStore from "../stores/news.store";
 import { useEffect } from "react";
 
 export const SlideShow = () => {
-  const { queryArticles } = useNews({ query: "videogames", pageSize: 5 });
+  const { queryArticles } = useNews({
+    query: "playstation",
+    pageSize: 5,
+    sortBy: "publishedAt",
+  });
 
   const setArticles = useNewsStore((state) => state.setArticles);
   const news = useNewsStore((state) => state.news);
 
-  const { isLoading, data } = queryArticles;
+  const { isLoading, data, isError } = queryArticles;
 
   useEffect(() => {
     if (data?.articles) {
@@ -31,7 +35,7 @@ export const SlideShow = () => {
     /*   autoplay: true, */
   };
 
-  if (isLoading) {
+  if (isLoading || isError) {
     return <SlideShowLoader />;
   }
 

@@ -17,7 +17,7 @@ interface Props {
 
 export const useArticles = ({ query, pageSize, sortBy }: Props) => {
   const queryArticles = useQuery({
-    queryKey: ["VideoGames"],
+    queryKey: ["VideoGames", { query, pageSize, sortBy }],
     queryFn: () => getNews({ query, pageSize, sortBy }),
     staleTime: 1000 * 60 * 60 * 4, // 4 hours
   });

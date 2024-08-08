@@ -8,7 +8,6 @@ interface NewsSearch {
 export const Route = createFileRoute("/search")({
   component: () => <SearchPage />,
   validateSearch: (search: Record<string, unknown>): NewsSearch => {
-    // validate and parse the search params into a typed state
     return {
       q: (search.q as string) || "",
     };

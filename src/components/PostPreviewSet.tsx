@@ -9,7 +9,15 @@ export const PostPreviewSet = () => {
     sortBy: "relevance",
   });
 
-  const { data, isLoading } = queryArticles;
+  const { data, isLoading, isError } = queryArticles;
+
+  if (isError) {
+    return (
+      <div>
+        <h1 className="text-3xl text-red-600">ERROR GETTING DATA</h1>
+      </div>
+    );
+  }
   return (
     <>
       {isLoading && <SlideShowLoader />}
