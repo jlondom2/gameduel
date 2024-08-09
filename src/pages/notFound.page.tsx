@@ -1,4 +1,3 @@
-import { LiveNews } from "../components";
 import { PageBanner } from "../components/ui/PageBanner";
 import errorImage from "../assets/error-img.png";
 import { Button } from "../components/ui/Button";
@@ -8,8 +7,6 @@ export const NotFound = () => {
     <>
       <div className="innerpage">
         <PageBanner title="404 Not Found" />
-
-        <LiveNews />
 
         <div className="error-display container">
           <figure

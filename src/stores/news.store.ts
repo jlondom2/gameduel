@@ -18,7 +18,7 @@ type Actions = {
   setVideos: (videos: VideoResult[]) => void;
   movetoFirstPosition: (video: VideoResult) => void;
   setFeaturedVideo: (video: VideoResult) => void;
-  handleAnimation: () => void;
+  handleAnimation: (value: boolean) => void;
 };
 
 const initialState: State = {
@@ -61,10 +61,10 @@ const useNewsStore = create<State & Actions>()(
             featuredVideo: video,
           }));
         },
-        handleAnimation: () => {
-          set((state) => {
+        handleAnimation: (value) => {
+          set(() => {
             return {
-              animate: !state.animate,
+              animate: value,
             };
           });
         },

@@ -15,7 +15,10 @@ export const SmallVideo = ({ video }: Props) => {
 
   const setFeaturedVideo = useNewsStore((state) => state.setFeaturedVideo);
 
+  const handleAnimation = useNewsStore((state) => state.handleAnimation);
+
   const handleVideos = (video: VideoResult) => {
+    handleAnimation(true);
     setFeaturedVideo(video);
   };
 

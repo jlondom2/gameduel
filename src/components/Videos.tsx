@@ -3,7 +3,7 @@ import { useVideos } from "../hooks";
 import { FeaturedVideo } from "./videos/FeaturedVideo";
 import { SmallVideo } from "./videos/SmallVideo";
 import useNewsStore from "../stores/news.store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const Videos = () => {
   const { queryVideos } = useVideos();
@@ -16,18 +16,18 @@ export const Videos = () => {
 
   const setFeaturedVideo = useNewsStore((state) => state.setFeaturedVideo);
 
+  const handleAnimation = useNewsStore((state) => state.handleAnimation);
+
   const videos = useNewsStore((state) => state.videos);
   const featuredVideo = useNewsStore((state) => state.featuredVideo);
 
-  const [animate, setAnimate] = useState(false);
   useEffect(() => {
     if (isFetched && videosFetched) {
       console.log("videos changed");
       setVideos(videosFetched);
       setFeaturedVideo(videosFetched[0]);
-      setAnimate(true);
     }
-  }, [videosFetched, isFetched, setVideos, setFeaturedVideo]);
+  }, [videosFetched, isFetched, setVideos, setFeaturedVideo, handleAnimation]);
 
   if (isError) return <ErrorComponent error="Error Loading Videos" />;
 
@@ -36,9 +36,7 @@ export const Videos = () => {
       <div className="container max-w-screen-xl py-32">
         <div className="grid grid-cols-10 gap-5">
           <div className="post-open game-review negative col-span-7">
-            {featuredVideo && (
-              <FeaturedVideo animate={animate} video={featuredVideo} />
-            )}
+            {featuredVideo && <FeaturedVideo video={featuredVideo} />}
           </div>
 
           <div className="col-span-3">
