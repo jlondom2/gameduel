@@ -5,6 +5,7 @@ interface Props {
   query: string;
   pageSize: number;
   sortBy?: "publishedAt" | "relevance";
+  page?: number;
 }
 
 // create an interface Props that will have three properties query, pageSize, and sortBy both of type string.
@@ -15,10 +16,10 @@ interface Props {
 
 // and display the fetched articles.
 
-export const useArticles = ({ query, pageSize, sortBy }: Props) => {
+export const useArticles = ({ query, pageSize, sortBy, page }: Props) => {
   const queryArticles = useQuery({
-    queryKey: ["VideoGames", { query, pageSize, sortBy }],
-    queryFn: () => getNews({ query, pageSize, sortBy }),
+    queryKey: ["VideoGames", { query, pageSize, sortBy, page }],
+    queryFn: () => getNews({ query, pageSize, sortBy, page }),
     staleTime: 1000 * 60 * 60 * 4, // 4 hours
   });
 

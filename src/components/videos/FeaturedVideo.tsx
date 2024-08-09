@@ -1,14 +1,41 @@
 import { VideoResult } from "../../interfaces/video";
 import ReactPlayer from "react-player";
+import useNewsStore from "../../stores/news.store";
+
+import { gsap } from "gsap";
+import { useEffect } from "react";
 
 interface Props {
   video: VideoResult;
-  animate?: boolean;
 }
 
-export const FeaturedVideo = ({ video, animate }: Props) => {
+export const FeaturedVideo = ({ video }: Props) => {
+  const animate = useNewsStore((state) => state.animate);
+
+  const handleAnimation = useNewsStore((state) => state.handleAnimation);
+
+  useEffect(() => {
+    if (animate) {
+      gsap
+        .fromTo(
+          ".post-open-content",
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+          },
+        )
+        .then(() => {
+          handleAnimation(false);
+        });
+    }
+  }, [animate, handleAnimation]);
   return (
-    <div className={`post-open-content v5 ${animate ? "animate" : ""}`}>
+    <div className={`post-open-content v5`}>
       <div className="post-open-body">
         <div className="post-open-media-wrap">
           <div className="post-open-media">
@@ -62,6 +89,7 @@ export const FeaturedVideo = ({ video, animate }: Props) => {
         {/* POST OPEN TEXT */}
         <p className="post-open-text">{video.deck}</p>
       </div>
+
       {/* /POST OPEN BODY */}
     </div>
   );

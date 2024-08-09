@@ -1641,10 +1641,15 @@ p.small {
 .post-open-content {
   transition: transform 0.3s ease-in-out;
 }
-
-.post-open-content {
-  opacity: 0;
-}
 .post-open-content.animate {
   animation: translate-from-right 0.4s ease-in 1 forwards;
+}
+
+.homeset .post-preview.picture .post-preview-overlay {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  background-color: transparent;
+  top: auto;
+  bottom: 0;
 }
