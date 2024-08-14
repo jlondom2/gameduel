@@ -2,26 +2,22 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import logo from "../../assets/logo.png";
 import { GoSearch } from "react-icons/go";
-import { TopBar } from "./TopBar";
+/* import { TopBar } from "./TopBar";
+ */
 import { Link } from "@tanstack/react-router";
 import useUIStore from "../../stores/ui.store";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "eSports", href: "#", current: false },
-  { name: "News", href: "#", current: false },
-  { name: "Features", href: "#", current: false },
-  { name: "Shop", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Home", to: "/", current: true },
+  { name: "Play Station", to: "/news/ps5", current: false },
+  { name: "Xbox", to: "/news/xbox", current: false },
+  { name: "Nintendo", to: "/news/nintendo", current: false },
+  { name: "Videos", to: "/videos", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -31,13 +27,15 @@ function classNames(...classes: string[]) {
 export default function NavBar() {
   const handleSearchPopup = useUIStore((state) => state.handleSearchPopup);
 
+  const reset = useUIStore((state) => state.reset);
+
   const openSearchPopup = () => {
     handleSearchPopup();
   };
   return (
     <Disclosure as="nav" className="bg-gray-800">
-      <TopBar />
-      <div className="navigation-wrap sticky-on-top absolute left-0 right-0 top-[42px] z-10 mx-auto max-w-screen-xl px-10">
+      {/*  <TopBar /> */}
+      <div className="navigation-wrap sticky-on-top absolute left-0 right-0 top-[0px] z-10 mx-auto max-w-screen-xl px-10">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
@@ -63,9 +61,12 @@ export default function NavBar() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="main-menu flex h-full space-x-6 md:space-x-2 lg:space-x-10">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.to}
+                    onClick={() => {
+                      reset();
+                    }}
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
                       item.current
@@ -75,7 +76,7 @@ export default function NavBar() {
                     )}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -144,7 +145,6 @@ export default function NavBar() {
             <DisclosureButton
               key={item.name}
               as="a"
-              href={item.href}
               aria-current={item.current ? "page" : undefined}
               className={classNames(
                 item.current

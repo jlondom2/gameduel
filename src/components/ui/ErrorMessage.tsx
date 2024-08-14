@@ -1,23 +1,23 @@
-export const ErrorMessage = () => {
+import { MdError } from "react-icons/md";
+
+interface Props {
+  message: string;
+}
+export const ErrorMessage = ({ message }: Props) => {
   return (
-    <div>
-      <div
-        className="dark:bg-gray-800 mb-4 flex items-center rounded-lg bg-red-50 p-4 text-sm text-red-800 dark:text-red-400"
-        role="alert"
-      >
-        <svg
-          className="me-3 inline h-4 w-4 flex-shrink-0"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-        </svg>
-        <span className="sr-only">Info</span>
-        <div>
-          <span className="font-medium">Error!</span> We can't get news
+    <div className="container mb-6 max-w-screen-xl">
+      <div className="information-box error inline-block w-auto">
+        {/* INFORMATION BOX ICON */}
+        <div className="information-box-icon">
+          {/* CROSS CB ICON */}
+          <MdError className="cross-cb-icon" />
+
+          {/* /CROSS CB ICON */}
         </div>
+        {/* /INFORMATION BOX ICON */}
+        {/* INFORMATION BOX MESSAGE */}
+        <p className="information-box-message">{message}</p>
+        {/* /INFORMATION BOX MESSAGE */}
       </div>
     </div>
   );

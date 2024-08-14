@@ -3,22 +3,22 @@ import { createJSONStorage, persist } from "zustand/middleware";
 import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { ArticleElement } from "../interfaces/article";
-import { VideoResult } from "../interfaces/video";
+import { VideoItems } from "../interfaces/video";
 
 type State = {
   news: ArticleElement[];
-  videos: VideoResult[];
-  featuredVideo: VideoResult | null;
+  videos: VideoItems[];
+  featuredVideo: VideoItems | null;
   animate: boolean;
 };
 
 type Actions = {
   reset: () => void;
   setArticles: (articles: ArticleElement[]) => void;
-  setVideos: (videos: VideoResult[]) => void;
-  movetoFirstPosition: (video: VideoResult) => void;
-  setFeaturedVideo: (video: VideoResult) => void;
-  handleAnimation: () => void;
+  setVideos: (videos: VideoItems[]) => void;
+  movetoFirstPosition: (video: VideoItems) => void;
+  setFeaturedVideo: (video: VideoItems) => void;
+  handleAnimation: (value: boolean) => void;
 };
 
 const initialState: State = {
@@ -49,7 +49,9 @@ const useNewsStore = create<State & Actions>()(
 
         movetoFirstPosition: (video) => {
           set((state) => {
-            const newVideos = state.videos.filter((v) => v.id !== video.id);
+            const newVideos = state.videos.filter(
+              (v) => v.id.videoId !== video.id.videoId,
+            );
             return {
               videos: [video, ...newVideos],
             };
@@ -61,10 +63,10 @@ const useNewsStore = create<State & Actions>()(
             featuredVideo: video,
           }));
         },
-        handleAnimation: () => {
-          set((state) => {
+        handleAnimation: (value) => {
+          set(() => {
             return {
-              animate: !state.animate,
+              animate: value,
             };
           });
         },

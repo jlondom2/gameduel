@@ -22,7 +22,6 @@ export const SearchPopUp = () => {
 
   const {
     register,
-    handleSubmit,
 
     formState: { errors },
   } = useForm<Inputs>();

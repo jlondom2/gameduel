@@ -1,21 +1,24 @@
 import { FaPlay } from "react-icons/fa";
-import { VideoResult } from "../../interfaces/video";
+import { VideoItems } from "../../interfaces/video";
 import useNewsStore from "../../stores/news.store";
 
 interface Props {
   key?: number;
-  video: VideoResult;
+  video: VideoItems;
 }
 export const SmallVideo = ({ video }: Props) => {
-  const convertSeconds = (seconds: number) => {
+  /*  const convertSeconds = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes}:${remainingSeconds}`;
-  };
+  }; */
 
   const setFeaturedVideo = useNewsStore((state) => state.setFeaturedVideo);
 
-  const handleVideos = (video: VideoResult) => {
+  const handleAnimation = useNewsStore((state) => state.handleAnimation);
+
+  const handleVideos = (video: VideoItems) => {
+    handleAnimation(true);
     setFeaturedVideo(video);
   };
 
@@ -29,24 +32,24 @@ export const SmallVideo = ({ video }: Props) => {
         <div>
           <div className="post-preview-img-wrap">
             <figure className="post-preview-img liquid">
-              <img src={video.image.original_url} alt={video.name} />
+              <img
+                src={video.snippet.thumbnails.default.url}
+                alt={video.snippet.title}
+              />
             </figure>
             <div className="post-preview-overlay">
               <div className="play-button tiny">
                 <FaPlay />
               </div>
-              <p className="timestamp-tag tiny">
-                {convertSeconds(video.length_seconds)}
-              </p>
             </div>
           </div>
         </div>
-        <div className="post-preview-title">{video.name}</div>
+        <div className="post-preview-title">{video.snippet.title}</div>
         <div className="post-author-info-wrap">
           <p className="post-author-info small light">
-            By <span className="post-author">{video.user}</span>
+            By <span className="post-author">{video.snippet.channelTitle}</span>
             <span className="separator">|</span>{" "}
-            {new Date(video.publish_date).toLocaleDateString()}
+            {new Date(video.snippet.publishedAt).toLocaleDateString()}
           </p>
         </div>
       </div>

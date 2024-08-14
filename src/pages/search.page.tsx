@@ -1,10 +1,10 @@
 import { PageBanner } from "../components/ui/PageBanner";
 import { PostPreviewLandscape } from "../components/postPreviews/PostPreviewLandscape";
-import { SearchForm } from "../components/sidebar/SearchForm";
 import { getRouteApi } from "@tanstack/react-router";
 import { NoSearch } from "../components/search/NoSearch";
 import { useSearchHook } from "../hooks/useSearch";
 import { FullScreenLoader } from "../components/ui/FullScreenLoader";
+import { Sidebar } from "../components/Sidebar";
 
 export const SearchPage = () => {
   const pageSize = 100; // Adjust as needed
@@ -27,7 +27,7 @@ export const SearchPage = () => {
   }
 
   if (isError) {
-    return <FullScreenLoader />;
+    return <NoSearch />;
   }
   return (
     <>
@@ -83,7 +83,7 @@ export const SearchPage = () => {
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <SearchForm />
+            <Sidebar />
           </div>
         </div>
       </div>

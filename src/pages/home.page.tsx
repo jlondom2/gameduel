@@ -2,13 +2,11 @@ import { useEffect } from "react";
 import { LiveNews } from "../components/LiveNews";
 import { SlideShow } from "../components/SlideShow";
 import { PostPreviewSet } from "../components/PostPreviewSet";
-import { SearchForm } from "../components/sidebar/SearchForm";
-import { PopularPosts } from "../components/sidebar/PopularPosts";
 
 import { PostPreviewFeed } from "../components/PostPreviewFeed";
-import { LatestNews } from "../components/sidebar/LatestNews";
 
 import { Videos } from "../components/Videos";
+import { Sidebar } from "../components/Sidebar";
 
 export const HomePage = () => {
   //clear localstorage every 2 hours
@@ -47,18 +45,7 @@ export const HomePage = () => {
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <div className="layout-sidebar layout-item">
-              <div className="widget-sidebar">
-                <SearchForm />
-              </div>
-              <div className="widget-sidebar">
-                <PopularPosts />
-              </div>
-
-              <div className="widget-sidebar">
-                <LatestNews />
-              </div>
-            </div>
+            <Sidebar />
           </div>
         </div>
       </div>

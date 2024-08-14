@@ -4,7 +4,7 @@ import { SlideShowLoader } from "./ui/SlideShowLoader";
 
 export const PostPreviewSet = () => {
   const { queryArticles } = useArticles({
-    query: "VideoGames",
+    query: "videogames",
     pageSize: 4,
     sortBy: "relevance",
   });
@@ -22,7 +22,7 @@ export const PostPreviewSet = () => {
     <>
       {isLoading && <SlideShowLoader />}
 
-      <div className={`grid grid-flow-col grid-rows-3 gap-0`}>
+      <div className={`homeset grid grid-flow-col grid-rows-3 gap-0`}>
         {data?.articles?.map((article, index) => (
           <div
             className={`${index === 0 ? "row-span-3" : "col-span-1"} ${index === data.articles.length - 1 && "row-span-1"} `}

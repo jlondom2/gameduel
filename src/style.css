@@ -1641,10 +1641,68 @@ p.small {
 .post-open-content {
   transition: transform 0.3s ease-in-out;
 }
-
-.post-open-content {
-  opacity: 0;
-}
 .post-open-content.animate {
   animation: translate-from-right 0.4s ease-in 1 forwards;
+}
+
+.homeset .post-preview.picture .post-preview-overlay {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  background-color: transparent;
+  top: auto;
+  bottom: 0;
+}
+
+.information-box {
+  width: 100%;
+  height: 60px;
+  padding: 0 26px 0 70px;
+  border: 1px solid #dbdbdb;
+  border-radius: 200px;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.information-box .information-box-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #363636;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+
+.information-box.error .information-box-icon {
+  background-color: #f30a5c;
+}
+
+.information-box .information-box-icon .check-icon,
+.information-box .information-box-icon .cross-cb-icon,
+.information-box .information-box-icon .exclamation-icon {
+  fill: #fff;
+  position: absolute;
+}
+
+.information-box .information-box-icon .cross-cb-icon {
+  top: 9px;
+  left: 9px;
+  font-size: 30px;
+}
+
+.information-box .information-box-message,
+.information-box .information-box-action {
+  line-height: 60px;
+}
+
+.information-box .information-box-message {
+  color: #363636;
+}
+
+/* css */
+html {
+  scroll-behavior: smooth;
 }
