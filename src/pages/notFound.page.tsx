@@ -8,7 +8,7 @@ export const NotFound = () => {
       <div className="innerpage">
         <PageBanner title="404 Not Found" />
 
-        <div className="error-display container">
+        <div className="error-display container max-w-screen-xl">
           <figure
             className="error-img liquid imgLiquid_bgSize imgLiquid_ready mb-11"
             style={{

@@ -6,7 +6,11 @@ import { useEffect } from "react";
 import { ErrorMessage } from "./ui/ErrorMessage";
 
 export const Videos = () => {
-  const { queryVideos } = useVideos();
+  const videoParams = {
+    channel: "UCNvzD7Z-g64bPXxGzaQaa4g",
+    maxResults: "10",
+  };
+  const { queryVideos } = useVideos(videoParams);
 
   const { data, isError, isFetched } = queryVideos;
 
@@ -31,7 +35,7 @@ export const Videos = () => {
 
   return (
     <div className="section-bg">
-      <div className="container max-w-screen-xl py-32">
+      <div className="container max-w-screen-xl py-20">
         <div className="grid grid-cols-10 gap-5">
           <div className="post-open game-review negative col-span-7">
             {featuredVideo && <FeaturedVideo video={featuredVideo} />}

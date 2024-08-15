@@ -1,16 +1,19 @@
 import { youtubeApi } from "../api/youtubeApi";
 import { Video } from "../interfaces/video";
 
-export const getVideos = async (): Promise<Video> => {
-  const apiKey = "AIzaSyA07YAReDyk2FOq6kdGwItiepAKz7Kekhc";
+interface Props {
+  channel: string;
+  maxResults: string;
+}
 
-  //www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=YOURKEYWORD&type=video&key=AIzaSyA07YAReDyk2FOq6kdGwItiepAKz7Kekhc
+export const getVideos = async (videoParams: Props): Promise<Video> => {
+  const apiKey = "AIzaSyA07YAReDyk2FOq6kdGwItiepAKz7Kekhc";
 
   const params = new URLSearchParams();
   params.append("key", apiKey);
   params.append("part", "snippet");
-  params.append("maxResults", "10");
-  params.append("channelId", "UCNvzD7Z-g64bPXxGzaQaa4g");
+  params.append("maxResults", videoParams.maxResults);
+  params.append("channelId", videoParams.channel);
   params.append("type", "video");
   params.append("order", "date");
 
@@ -23,3 +26,5 @@ export const getVideos = async (): Promise<Video> => {
     throw new Error("Failed to fetch videos");
   }
 };
+
+//CHANNEL FOR VIDEOS PAGE: UCXa_bzvv7Oo1glaW9FldDhQ

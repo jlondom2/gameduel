@@ -3,6 +3,7 @@ import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import NavBar from "../components/ui/NavBar";
 import { NotFound } from "../pages/notFound.page";
 import { SearchPopUp } from "../components/search/SearchPopUp";
+import { Footer } from "../components/ui/Footer";
 
 export const Route = createRootRoute({
   component: () => (
@@ -12,6 +13,8 @@ export const Route = createRootRoute({
         <NavBar />
 
         <Outlet />
+
+        <Footer />
 
         <TanStackRouterDevtools />
       </div>

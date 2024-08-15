@@ -1,4 +1,3 @@
-import { useNavigate } from "@tanstack/react-router";
 import { ReactNode } from "react";
 
 interface Props {
@@ -8,11 +7,10 @@ interface Props {
   size?: "big" | "small" | "tiny";
   to?: string; // optional for Link component, required for Route component
 }
-export const Button = ({ children, color, bg, size, to }: Props) => {
-  const navigate = useNavigate();
+export const Button = ({ children, color, bg, size, to = "" }: Props) => {
   return (
     <button
-      onClick={() => navigate({ to: to ? to : "" })}
+      onClick={() => window.open(to, "_blank")}
       className={`button ${size} ${color} ${bg} flex items-center justify-between gap-2 transition-colors duration-150 ${bg === "bg-pink-100" ? "hover:bg-pink-200" : ""} ${bg === "bg-blue-100" ? "hover:bg-blue-200" : ""} ${bg === "bg-purple-100" ? "hover:bg-purple-200" : ""} `}
     >
       {children}

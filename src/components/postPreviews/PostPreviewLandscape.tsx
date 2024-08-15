@@ -12,7 +12,7 @@ export const PostPreviewLandscape = ({ article, size, index = 1 }: Props) => {
       <div
         className={`post-preview landscape ${size || ""} ${index % 2 === 0 ? "orpurple" : "orblu"} mb-5`}
       >
-        <a href="post-v1.html">
+        <a href={article.url} target="_blank">
           <div className="post-preview-img-wrap">
             <figure
               className="post-preview-img liquid imgLiquid_bgSize imgLiquid_ready"
@@ -45,12 +45,13 @@ export const PostPreviewLandscape = ({ article, size, index = 1 }: Props) => {
 
         <p className="post-preview-text">{article.description}</p>
         <div className="my-5">
-          <Link
-            to="/"
+          <a
+            href={article.url}
+            target="_blank"
             className="rounded-full bg-gray-dark p-1 px-3 text-sm text-white"
           >
             Read Full Article
-          </Link>
+          </a>
         </div>
       </div>
     </>

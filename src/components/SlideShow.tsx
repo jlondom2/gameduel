@@ -60,7 +60,12 @@ export const SlideShow = () => {
                     <p className="post-preview-text">{slide.description}</p>
 
                     <div className="mt-10">
-                      <Button size="big" bg="bg-purple-100" color="text-white">
+                      <Button
+                        size="big"
+                        bg="bg-purple-100"
+                        color="text-white"
+                        to={slide.url}
+                      >
                         Read Article
                       </Button>
                     </div>

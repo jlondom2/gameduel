@@ -31,7 +31,7 @@ export const NewsPage = () => {
   return (
     <>
       <PageBanner title={`${cat}`} />
-      <div className="container py-6">
+      <div className="container max-w-screen-xl py-6">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-10">
           <div className="col-span-1 md:col-span-8">
             <div className="section-title-wrap blue">

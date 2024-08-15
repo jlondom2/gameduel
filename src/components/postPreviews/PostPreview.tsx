@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { ArticleElement } from "../../interfaces/article";
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 export const PostPreview = ({ size, article }: Props) => {
   return (
     <div className={`post-preview picture ${size === "full" ? "big" : ""} `}>
-      <Link to="/">
+      <a href={article.url} target="_blank">
         <div className="post-preview-img-wrap">
           {size !== "full" ? (
             <span className={`tag-ornament bg-purple-100`}>
@@ -45,7 +44,7 @@ export const PostPreview = ({ size, article }: Props) => {
             )}
           </div>
         </div>
-      </Link>
+      </a>
     </div>
   );
 };

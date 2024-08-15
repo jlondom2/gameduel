@@ -13,20 +13,20 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as VideosImport } from './routes/videos'
 import { Route as SearchImport } from './routes/search'
 import { Route as NewsCatImport } from './routes/news.$cat'
 
 // Create Virtual Routes
 
-const AboutLazyImport = createFileRoute('/about')()
 const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
 
-const AboutLazyRoute = AboutLazyImport.update({
-  path: '/about',
+const VideosRoute = VideosImport.update({
+  path: '/videos',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
+} as any)
 
 const SearchRoute = SearchImport.update({
   path: '/search',
@@ -61,11 +61,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SearchImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutLazyImport
+    '/videos': {
+      id: '/videos'
+      path: '/videos'
+      fullPath: '/videos'
+      preLoaderRoute: typeof VideosImport
       parentRoute: typeof rootRoute
     }
     '/news/$cat': {
@@ -83,7 +83,7 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   IndexLazyRoute,
   SearchRoute,
-  AboutLazyRoute,
+  VideosRoute,
   NewsCatRoute,
 })
 
@@ -97,7 +97,7 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/search",
-        "/about",
+        "/videos",
         "/news/$cat"
       ]
     },
@@ -107,8 +107,8 @@ export const routeTree = rootRoute.addChildren({
     "/search": {
       "filePath": "search.tsx"
     },
-    "/about": {
-      "filePath": "about.lazy.tsx"
+    "/videos": {
+      "filePath": "videos.tsx"
     },
     "/news/$cat": {
       "filePath": "news.$cat.tsx"
