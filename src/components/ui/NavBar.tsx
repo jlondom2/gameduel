@@ -5,6 +5,8 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
+import { HiOutlineChevronDoubleRight } from "react-icons/hi2";
+
 import logo from "../../assets/logo.png";
 import { GoSearch } from "react-icons/go";
 /* import { TopBar } from "./TopBar";
@@ -81,17 +83,19 @@ export default function NavBar() {
               </div>
             </div>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-8 sm:pr-0">
+            <p className="flex items-center gap-1 pt-1 align-middle text-sm font-bold text-purple-100">
+              Search More News <HiOutlineChevronDoubleRight />{" "}
+            </p>
             <button
               type="button"
               onClick={openSearchPopup}
               className="bg-gray-800 text-gray-400 focus:ring-offset-gray-800 hover:text-blue relative rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             >
               <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
+
               <GoSearch aria-hidden="true" className="h-6 w-6" />
             </button>
-
             {/* Profile dropdown */}
             {/* <Menu as="div" className="relative ml-3">
               <div>

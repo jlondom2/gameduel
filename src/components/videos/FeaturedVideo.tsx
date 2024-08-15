@@ -2,8 +2,9 @@ import ReactPlayer from "react-player";
 import useNewsStore from "../../stores/news.store";
 
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { VideoItems } from "../../interfaces/video";
+import { LoaderSmall } from "../ui/LoaderSmall";
 
 interface Props {
   video: VideoItems;
@@ -13,6 +14,15 @@ export const FeaturedVideo = ({ video }: Props) => {
   const animate = useNewsStore((state) => state.animate);
 
   const handleAnimation = useNewsStore((state) => state.handleAnimation);
+
+  const [timer, setTimer] = useState(true);
+
+  useEffect(() => {
+    setTimer(true);
+    setTimeout(() => {
+      setTimer(false);
+    }, 500);
+  }, [video]);
 
   useEffect(() => {
     if (animate) {
@@ -39,11 +49,15 @@ export const FeaturedVideo = ({ video }: Props) => {
       <div className="post-open-body">
         <div className="post-open-media-wrap">
           <div className="post-open-media">
-            <ReactPlayer
-              url={`https://www.youtube.com/watch?v=${video.id.videoId}`}
-              width={"100%"}
-              height={"500px"}
-            />
+            {timer ? (
+              <LoaderSmall />
+            ) : (
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${video.id.videoId}`}
+                width={"100%"}
+                height={"500px"}
+              />
+            )}
           </div>
         </div>
 
