@@ -8,7 +8,7 @@ import { ErrorMessage } from "./ui/ErrorMessage";
 export const Videos = () => {
   const videoParams = {
     channel: "UCNvzD7Z-g64bPXxGzaQaa4g",
-    maxResults: "10",
+    maxResults: "20",
   };
   const { queryVideos } = useVideos(videoParams);
 
@@ -27,6 +27,7 @@ export const Videos = () => {
     if (isFetched && videosFetched) {
       console.log("videos changed");
       setVideos(videosFetched);
+
       setFeaturedVideo(videosFetched[0]);
     }
   }, [videosFetched, isFetched, setVideos, setFeaturedVideo, handleAnimation]);
