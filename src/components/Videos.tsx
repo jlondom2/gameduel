@@ -8,7 +8,7 @@ import { ErrorMessage } from "./ui/ErrorMessage";
 export const Videos = () => {
   const videoParams = {
     channel: "UCNvzD7Z-g64bPXxGzaQaa4g",
-    maxResults: "20",
+    maxResults: "10",
   };
   const { queryVideos } = useVideos(videoParams);
 
@@ -38,11 +38,11 @@ export const Videos = () => {
     <div className="section-bg">
       <div className="container max-w-screen-xl py-20">
         <div className="grid grid-cols-10 gap-5">
-          <div className="post-open game-review negative col-span-7">
+          <div className="post-open game-review negative col-span-10 md:col-span-7">
             {featuredVideo && <FeaturedVideo video={featuredVideo} />}
           </div>
 
-          <div className="col-span-3">
+          <div className="md:col-span-3">
             {videos?.map((video) => (
               <SmallVideo key={Number(video.id)} video={video} />
             ))}

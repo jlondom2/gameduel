@@ -37,7 +37,7 @@ export default function NavBar() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {/*  <TopBar /> */}
-      <div className="navigation-wrap sticky-on-top absolute left-0 right-0 top-[0px] z-10 mx-auto max-w-screen-xl px-10">
+      <div className="navigation-wrap sticky-on-top absolute left-0 right-0 top-[0px] z-10 mx-auto max-w-screen-xl md:px-10">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
@@ -84,7 +84,7 @@ export default function NavBar() {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-8 sm:pr-0">
-            <p className="flex items-center gap-1 pt-1 align-middle text-sm font-bold text-purple-100">
+            <p className="hidden items-center gap-1 pt-1 align-middle text-sm font-bold text-purple-100 md:flex">
               Search More News <HiOutlineChevronDoubleRight />{" "}
             </p>
             <button

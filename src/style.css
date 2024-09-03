@@ -1424,7 +1424,7 @@ input[type="email"].input-line {
 .post-preview.landscape.big {
   height: auto;
   padding: 40px 0 0 390px;
-  margin: 25px 0 60px;
+  margin: 25px 0 80px;
 }
 
 .post-preview.landscape.big .post-preview-img {
@@ -1884,4 +1884,55 @@ html {
 
 .section-title-separator:before {
   background-color: #00e3d0;
+}
+
+@media (max-width: 768px) {
+  .section-title-wrap .section-title-separator:before {
+    width: 50px;
+  }
+
+  .post-preview-title {
+    margin-bottom: 20px;
+  }
+
+  .post-preview-text {
+    display: contents;
+  }
+
+  .post-preview.picture.big .post-preview-overlay .post-preview-title,
+  .post-preview.large .post-preview-title,
+  .post-open .post-open-title.small,
+  .reviews-wrap .reviews-header .reviews-header-title {
+    font-size: 1.5em;
+  }
+
+  .post-preview.landscape,
+  .post-preview.landscape.big {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+
+  .post-preview.landscape.big .tag-ornament {
+    top: 250px;
+    left: 0;
+  }
+
+  .post-preview.landscape,
+  .post-preview.landscape.big {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+
+  .post-preview.landscape .post-preview-img-wrap,
+  .post-preview.landscape.big .post-preview-img-wrap {
+    margin-bottom: 16px;
+    position: static;
+  }
+
+  .post-preview.landscape.big .tag-ornament {
+    top: 250px;
+    left: 0;
+  }
 }

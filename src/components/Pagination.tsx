@@ -31,7 +31,6 @@ export const Pagination = ({ data }: Props) => {
               <a className="text-gray-500 border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 flex h-10 items-center justify-center border bg-white px-4 leading-tight hover:bg-white hover:text-gray-dark">
                 Current Page:{" "}
                 <span className="ms-1 font-bold text-blue-100">
-                  {" "}
                   {newsPage}{" "}
                 </span>
               </a>

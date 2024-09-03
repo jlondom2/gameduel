@@ -21,7 +21,6 @@ export const PostPreviewFeed = () => {
           article={article}
           size="big"
         />
-        /* Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime magni, debitis et voluptate molestias possimus nihil veniam cumque omnis dolor a beatae dolorem necessitatibus laborum delectus atque dicta ex facere. */
       ))}
     </>
   );

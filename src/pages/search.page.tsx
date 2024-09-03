@@ -5,9 +5,11 @@ import { NoSearch } from "../components/search/NoSearch";
 import { useSearchHook } from "../hooks/useSearch";
 import { FullScreenLoader } from "../components/ui/FullScreenLoader";
 import { Sidebar } from "../components/Sidebar";
+import useUIStore from "../stores/ui.store";
+import { Pagination } from "../components/Pagination";
 
 export const SearchPage = () => {
-  const pageSize = 100; // Adjust as needed
+  const pageSize = 8; // Adjust as needed
 
   const route = getRouteApi("/search");
 
@@ -15,7 +17,14 @@ export const SearchPage = () => {
 
   const query = routeSearch.q;
 
-  const { querySearch } = useSearchHook({ query: query, pageSize: pageSize });
+  const newsPage = useUIStore((state) => state.newsPage);
+
+  const { querySearch } = useSearchHook({
+    query: query,
+    pageSize: pageSize,
+    sortBy: "publishedAt",
+    page: newsPage,
+  });
 
   const { data, isLoading, isError } = querySearch;
 
@@ -79,6 +88,8 @@ export const SearchPage = () => {
                   </div>
                 </>
               )}
+
+              <Pagination data={data || []} />
             </div>
           </div>
 
